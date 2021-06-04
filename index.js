@@ -1,12 +1,8 @@
-// array of questions for user
-const questions = [
-];
 
 const fs = require('fs')
 const inquirer = require('inquirer')
 
-// function to initialize program
-// const readmeGenerator = () => {
+// Initialize generator: Prompt and Then
 inquirer
   .prompt([
     {
@@ -47,7 +43,8 @@ inquirer
   ])
   .then((answer) => {
 
-    function head() {
+    // Generate Head section
+    async function head() {
       const markdownHead = `
 <h1 align="center">${answer.title}</h1>
 <div align="center">${answer.description}</div>
@@ -60,8 +57,8 @@ inquirer
     }
     head()
 
-
-    function license() {
+    // Generate License badge
+    async function license() {
       const markdownMIT = `
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   `
@@ -87,7 +84,9 @@ inquirer
     }
     license()
 
-    function bodyFoot() {
+    // Generate Foot
+    async function bodyFoot() {
+      // Define markdownBody
       const markdownBody = `
   ---
   
@@ -109,6 +108,7 @@ inquirer
   
   ${answer.usage}
   `
+      // Define markdownFoot
       const markdownFoot = `
   ## Contributing
   
