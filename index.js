@@ -44,6 +44,10 @@ inquirer
       name: "questions",
       message: "What email address can users send questions to?",
     },
+    {
+      name: "github",
+      message: "What is your github username?",
+    },
   ])
   .then((answer) => {
 
@@ -144,6 +148,7 @@ ${answer.tests}
 ## Questions
 
 Have any questions about the application? Please feel free to ask at ${answer.questions}.
+Please visit my github at https://github.com/${answer.github}/ to see this project and more.
   `
 
 
